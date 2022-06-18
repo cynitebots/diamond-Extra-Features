@@ -152,7 +152,7 @@ async def get_ststs(bot, message):
 
 
 @Client.on_message(filters.command('Contact') & filters.incoming) 
-async def gen_invite(bot, message):
+async def media(bot, message):
     if len(message.command) == 1:
         return await message.reply('ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴏᴜʀ ʙᴏᴛ...ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ https://t.me/CyniteOfficial')
 
