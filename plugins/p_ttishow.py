@@ -153,7 +153,7 @@ async def get_ststs(bot, message):
 
 @Client.on_message(filters.command('Contact') & filters.incoming) 
 async def (bot, message):
-    rju = await message.reply('𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝚂𝚃𝙰𝚃𝚄𝚂 𝙳𝙴𝚃𝙰𝙸𝙻𝚂...')
+    rju = await message.reply('<a href=https://t.me/Teamx69>нαямαи</a></b>')
 
 
 # a function for trespassing into others groups, Inspired by a Vazha
