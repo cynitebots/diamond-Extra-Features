@@ -9,6 +9,7 @@ BITLY_API = os.environ.get("BITLY_API", "8df1df8c23f719e5cf97788cc2d40321ea30092
 CUTTLY_API = os.environ.get("CUTTLY_API", "f64dffbde033b6c307387dd50b7c76e505f1c")
 SHORTCM_API = os.environ.get("SHORTCM_API", "pk_...NIZv")
 GPLINKS_API = os.environ.get("GPLINKS_API", "008ccaedd6061ad1948838f410947603de9007a7")
+MDISK_API = os.environ.get("MDISK_API", "Qu7jX9V0Sn3q1JHdxjPp") 
 
 reply_markup = InlineKeyboardMarkup(
         [[
@@ -171,7 +172,18 @@ async def short(link):
                 shorten_urls += f"\n**GPLinks.in :-** {url}"
     except Exception as error:
         print(f"GPLink error :- {error}")
-    
+
+    # MDISK shorten
+    try:
+        api_url = "https://mdisk.me/convertor/api"
+        params = {'api': MDISK_API, 'url': link}
+        async with aiohttp.ClientSession() as session:
+            async with session.get(api_url, params=params, raise_for_status=True) as response:
+                data = await response.json()
+                url = data["shortenedUrl"]
+                shorten_urls += f"\n**mdisk.me :-** {url}"
+    except Exception as error:
+        print(f"MDISKlink error :- {error}")
     # Send the text
     try:
         shorten_urls += ""
