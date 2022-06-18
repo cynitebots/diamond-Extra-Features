@@ -9,7 +9,6 @@ BITLY_API = os.environ.get("BITLY_API", "8df1df8c23f719e5cf97788cc2d40321ea30092
 CUTTLY_API = os.environ.get("CUTTLY_API", "f64dffbde033b6c307387dd50b7c76e505f1c")
 SHORTCM_API = os.environ.get("SHORTCM_API", "pk_...NIZv")
 GPLINKS_API = os.environ.get("GPLINKS_API", "008ccaedd6061ad1948838f410947603de9007a7")
-MDISK_API = os.environ.get("MDISK_API", "Qu7jX9V0Sn3q1JHdxjPp") 
 
 reply_markup = InlineKeyboardMarkup(
         [[
@@ -172,15 +171,7 @@ async def short(link):
                 shorten_urls += f"\n**GPLinks.in :-** {url}"
     except Exception as error:
         print(f"GPLink error :- {error}")
-    
-    # Mdisk shorten
-    if MDISK_API:
-        try:
-            s = Shortener(api_key=MDISK_API)
-            url = mdisk.me/convertor(link)
-            shorten_urls += f"\n**mdisk.me/convertor :-** {url}"
-        except Exception as error:
-            print(f"Mdisk.me error :- {error}")
+   
     # Send the text
     try:
         shorten_urls += ""
