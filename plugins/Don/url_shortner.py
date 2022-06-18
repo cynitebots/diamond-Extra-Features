@@ -172,18 +172,15 @@ async def short(link):
                 shorten_urls += f"\n**GPLinks.in :-** {url}"
     except Exception as error:
         print(f"GPLink error :- {error}")
-
-    # MDISK shorten
-    try:
-        api_url = "https://mdisk.me/convertor/api"
-        params = {'api': MDISK_API, 'url': link}
-        async with aiohttp.ClientSession() as session:
-            async with session.get(api_url, params=params, raise_for_status=True) as response:
-                data = await response.json()
-                url = data["shortenedUrl"]
-                shorten_urls += f"\n**mdisk.me :-** {url}"
-    except Exception as error:
-        print(f"MDISKlink error :- {error}")
+    
+    # Mdisk shorten
+    if MDISK_API:
+        try:
+            s = Shortener(api_key=MDISK_API)
+            url = mdisk.me/convertor(link)
+            shorten_urls += f"\n**mdisk.me/convertor :-** {url}"
+        except Exception as error:
+            print(f"Mdisk.me error :- {error}")
     # Send the text
     try:
         shorten_urls += ""
