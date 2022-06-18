@@ -148,6 +148,14 @@ async def get_ststs(bot, message):
     await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
 
 
+@Client.on_message(filters.command('Contact') & filters.incoming)
+async def (bot, message):
+    raju = await message.reply('Getting Username Of Owner') 
+    out = "Take It Thanks For Using Our Bot:\n\n"
+    async for chat in chats:
+        out += f"**Title:** `@CyniteOfficial`\n"
+
+
 # a function for trespassing into others groups, Inspired by a Vazha
 # Not to be used , But Just to showcase his vazhatharam.
 # @Client.on_message(filters.command('invite') & filters.user(ADMINS))
