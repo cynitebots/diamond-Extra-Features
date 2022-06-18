@@ -151,7 +151,7 @@ async def get_ststs(bot, message):
     await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
 
 
-@Client.on_message(filters.command('Contact') & filters.Incoming) 
+@Client.on_message(filters.command('Contact') & filters.incoming) 
 async def get_ststs(bot, message):
     rju = await message.reply('ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴏᴜʀ ʙᴏᴛ...ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ https://t.me/Cyniteofficial') 
 
