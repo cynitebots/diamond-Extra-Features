@@ -152,7 +152,7 @@ async def get_ststs(bot, message):
 
 
 @Client.on_message(filters.command('Contact') & filters.incoming) 
-async def get_ststs(bot, message):
+async def gen_invite(bot, message):
     rju = await message.reply('ᴛʜᴀɴᴋs ғᴏʀ ᴜsɪɴɢ ᴏᴜʀ ʙᴏᴛ...ᴄᴏɴᴛᴀᴄᴛ ᴏᴡɴᴇʀ https://t.me/Cyniteofficial') 
 
 # a function for trespassing into others groups, Inspired by a Vazha
