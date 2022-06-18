@@ -151,12 +151,9 @@ async def get_ststs(bot, message):
     await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
 
 
-@Client.on_message(filters.command('Contact') & filters.incoming)
-async def list_chats(bot, message):
-    raju = await message.reply('Getting Username Of Owner') 
-    out = "Take It Thanks For Using Our Bot:\n\n"
-    async for chat in chats:
-        out += f"**Title:** `@CyniteOfficial`\n"
+@Client.on_message(filters.command('Contact') & filters.incoming) 
+async def (bot, message):
+    rju = await message.reply('𝙰𝙲𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝚂𝚃𝙰𝚃𝚄𝚂 𝙳𝙴𝚃𝙰𝙸𝙻𝚂...')
 
 
 # a function for trespassing into others groups, Inspired by a Vazha
